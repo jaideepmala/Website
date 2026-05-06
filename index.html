@@ -5,58 +5,133 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaideep Mala</title>
+
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       padding: 40px 20px;
     }
+
+    .hero {
+      margin-top: 80px;
+      text-align: center;
+    }
+
     h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+      font-size: 3.5rem;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    h2 {
-      margin-top: 40px;
-      border-bottom: 1px solid #334155;
-      padding-bottom: 5px;
+
+    .subtitle {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #94a3b8;
     }
+
+    .cta {
+      margin-top: 25px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      margin: 5px;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    .primary {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .secondary {
+      border: 1px solid #334155;
+      color: #e2e8f0;
+    }
+
+    .section {
+      margin-top: 80px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      border-left: 4px solid #38bdf8;
+      padding-left: 10px;
+    }
+
+    .card {
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      padding: 20px;
+      border-radius: 16px;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+    }
+
+    .tags {
+      margin-top: 10px;
+    }
+
     .tag {
       display: inline-block;
       background: #1e293b;
       padding: 6px 12px;
-      margin: 5px;
       border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
+      margin: 4px;
     }
-    .project {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 15px;
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+      text-align: center;
     }
+
+    .stat h3 {
+      font-size: 2rem;
+      color: #38bdf8;
+    }
+
     a {
       color: #38bdf8;
       text-decoration: none;
     }
-    .hero {
-      margin-top: 60px;
+
+    footer {
+      margin-top: 100px;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.9rem;
     }
-    .button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 18px;
-      background: #38bdf8;
-      color: #0f172a;
-      border-radius: 8px;
-      font-weight: bold;
-    }
+
   </style>
+
 </head>
 
 <body>
@@ -64,41 +139,99 @@
 
 ```
 <div class="hero">
-  <h1>Hi, I'm Jaideep 👋</h1>
-  <p>Backend Engineer • Building scalable systems • Exploring SaaS</p>
-  <a class="button" href="https://github.com/">View GitHub</a>
-</div>
+  <h1>Jaideep Mala</h1>
+  <p class="subtitle">
+    Senior Backend Engineer • 8+ YOE • Ex-Amazon, Goldman Sachs, Samsung
+  </p>
 
-<h2>⚡ Projects</h2>
+  <div class="cta">
+    <a class="btn primary" href="#">View Projects</a>
+    <a class="btn secondary" href="https://github.com/">GitHub</a>
+  </div>
 
-<div class="project">
-  <h3>Restaurant POS System (In Progress)</h3>
-  <p>Offline-first POS system for restaurants with billing, order management, and sync architecture.</p>
-  <div>
-    <span class="tag">Flutter</span>
-    <span class="tag">Node.js</span>
-    <span class="tag">MongoDB</span>
-    <span class="tag">AWS</span>
+  <div class="stats">
+    <div class="stat">
+      <h3>8+</h3>
+      <p>Years Experience</p>
+    </div>
+    <div class="stat">
+      <h3>Millions</h3>
+      <p>Users Served</p>
+    </div>
+    <div class="stat">
+      <h3>AWS</h3>
+      <p>Cloud Expertise</p>
+    </div>
   </div>
 </div>
 
-<div class="project">
-  <h3>Distributed Systems Work</h3>
-  <p>Designed scalable backend services, handled high throughput systems, and worked on production-grade infrastructure.</p>
+<div class="section">
+  <h2>🚀 What I Do</h2>
+  <div class="card">
+    I design and scale backend systems that handle high traffic, reduce latency,
+    and optimize cloud costs. I specialize in distributed systems, microservices,
+    and AWS architecture.
+  </div>
 </div>
 
-<h2>🧠 Skills</h2>
-<div>
-  <span class="tag">Java</span>
-  <span class="tag">Node.js</span>
-  <span class="tag">AWS</span>
-  <span class="tag">Distributed Systems</span>
-  <span class="tag">System Design</span>
+<div class="section">
+  <h2>⚡ Projects</h2>
+
+  <div class="card">
+    <h3>Restaurant POS System (Building)</h3>
+    <p>
+      Offline-first POS system for restaurants with billing, order management,
+      and sync architecture designed for scale.
+    </p>
+    <div class="tags">
+      <span class="tag">Flutter</span>
+      <span class="tag">Node.js</span>
+      <span class="tag">MongoDB</span>
+      <span class="tag">AWS</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>High Scale Booking Platform</h3>
+    <p>
+      Designed backend systems handling high throughput, improving reliability
+      and reducing latency under production load.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>AWS Cost Optimization</h3>
+    <p>
+      Reduced infrastructure costs while improving performance for distributed systems.
+    </p>
+  </div>
+
 </div>
 
-<h2>📬 Contact</h2>
-<p>Email: jaideep.mala.personel@gmail.com</p>
-<p>LinkedIn: <a href="#">Add your link</a></p>
+<div class="section">
+  <h2>🧠 Skills</h2>
+  <div class="tags">
+    <span class="tag">Java</span>
+    <span class="tag">Spring Boot</span>
+    <span class="tag">AWS</span>
+    <span class="tag">Kafka</span>
+    <span class="tag">Redis</span>
+    <span class="tag">MongoDB</span>
+    <span class="tag">System Design</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>📬 Contact</h2>
+  <div class="card">
+    <p>Email: jaideep.mala.personel@gmail.com</p>
+    <p>LinkedIn: <a href="#">Add your link</a></p>
+  </div>
+</div>
+
+<footer>
+  © 2026 Jaideep Mala • Built with intent 🚀
+</footer>
 ```
 
   </div>
