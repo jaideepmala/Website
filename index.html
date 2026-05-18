@@ -78,6 +78,70 @@
       border-color: #38bdf8;
     }
 
+    .project-featured {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .project-copy {
+      padding: 24px;
+    }
+
+    .project-copy h3 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .project-copy p {
+      color: #cbd5e1;
+    }
+
+    .project-links {
+      margin-top: 14px;
+    }
+
+    .project-links a {
+      color: #7dd3fc;
+      text-decoration: none;
+      margin-right: 16px;
+      font-weight: 600;
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 10px;
+      padding: 0 24px 24px;
+    }
+
+    .project-shot {
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: rgba(15, 23, 42, 0.72);
+    }
+
+    .project-shot.hero {
+      grid-row: span 2;
+    }
+
+    .project-shot img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-shot.hero img {
+      min-height: 320px;
+    }
+
+    .project-note {
+      padding: 0 24px 24px;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
     .tags { margin-top: 10px; }
 
     .tag {
@@ -115,6 +179,20 @@
       text-align: center;
       color: #64748b;
       font-size: 0.9rem;
+    }
+
+    @media (max-width: 780px) {
+      .project-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .project-shot.hero {
+        grid-row: auto;
+      }
+
+      .project-shot.hero img {
+        min-height: 0;
+      }
     }
 
   </style>
@@ -169,18 +247,40 @@
 <div class="section" id="projects">
   <h2>⚡ Projects</h2>
 
-  <div class="card">
-    <h3>Restaurant POS System (Building)</h3>
-    <p>
-      Offline-first POS system for restaurants with billing, order management,
-      and scalable sync architecture.
-    </p>
-    <div class="tags">
-      <span class="tag">Flutter</span>
-      <span class="tag">Node.js</span>
-      <span class="tag">MongoDB</span>
-      <span class="tag">AWS</span>
+  <div class="card project-featured">
+    <div class="project-copy">
+      <h3>Restaurant POS SaaS</h3>
+      <p>
+        A browser-based point-of-sale platform for restaurants with live order flow,
+        menu management, kitchen operations, role-based access, configurable billing,
+        and multi-tenant foundations.
+      </p>
+      <div class="tags">
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">Socket.IO</span>
+        <span class="tag">Multi-tenant SaaS</span>
+      </div>
+      <div class="project-links">
+        <a href="https://pos.jaideepmala.com/" target="_blank">Live Demo</a>
+        <a href="https://github.com/jaideepmala/restaurant-pos" target="_blank">Frontend</a>
+        <a href="https://github.com/jaideepmala/restaurant-pos-backend" target="_blank">Backend</a>
+      </div>
     </div>
+
+    <div class="project-gallery">
+      <div class="project-shot hero"><img src="assets/projects/restaurant-pos/dashboard.jpg" alt="Restaurant POS dashboard"></div>
+      <div class="project-shot"><img src="assets/projects/restaurant-pos/login.jpg" alt="Restaurant POS login"></div>
+      <div class="project-shot"><img src="assets/projects/restaurant-pos/menu.jpg" alt="Restaurant POS menu"></div>
+      <div class="project-shot"><img src="assets/projects/restaurant-pos/kitchen.jpg" alt="Kitchen board"></div>
+      <div class="project-shot"><img src="assets/projects/restaurant-pos/settings.jpg" alt="Restaurant settings"></div>
+    </div>
+
+    <p class="project-note">
+      Built as a real product path: frontend → API → database, then extended with staff roles,
+      realtime updates, and restaurant-specific settings.
+    </p>
   </div>
 
   <div class="card">
