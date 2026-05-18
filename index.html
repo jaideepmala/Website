@@ -142,6 +142,24 @@
       font-size: 0.95rem;
     }
 
+    .booking-project {
+      margin-top: 24px;
+    }
+
+    .booking-gallery {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      align-items: start;
+    }
+
+    .booking-gallery .project-shot.hero {
+      grid-row: auto;
+    }
+
+    .booking-gallery .project-shot img {
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+    }
+
     .tags { margin-top: 10px; }
 
     .tag {
@@ -192,6 +210,10 @@
 
       .project-shot.hero img {
         min-height: 0;
+      }
+
+      .booking-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -283,17 +305,32 @@
     </p>
   </div>
 
-  <div class="card">
-    <h3>High Scale Booking Platform</h3>
-    <p>
-      Built backend systems handling high throughput and improved reliability under production load.
-    </p>
-  </div>
+  <div class="card project-featured booking-project">
+    <div class="project-copy">
+      <h3>Hotel Booking Platform</h3>
+      <p>
+        A mobile-first hotel booking journey covering search, hotel discovery,
+        room selection, review, and payment handoff — shaped for high-intent conversion
+        and smooth travel-commerce flows.
+      </p>
+      <div class="tags">
+        <span class="tag">Booking Flow</span>
+        <span class="tag">Mobile UX</span>
+        <span class="tag">Travel Commerce</span>
+        <span class="tag">Payments</span>
+      </div>
+    </div>
 
-  <div class="card">
-    <h3>AWS Cost Optimization</h3>
-    <p>
-      Reduced infrastructure cost while improving performance for distributed systems.
+    <div class="project-gallery booking-gallery">
+      <div class="project-shot hero"><img src="assets/projects/booking-platform/search.jpg" alt="Hotel search flow"></div>
+      <div class="project-shot"><img src="assets/projects/booking-platform/results.jpg" alt="Hotel results"></div>
+      <div class="project-shot"><img src="assets/projects/booking-platform/hotel.jpg" alt="Hotel details"></div>
+      <div class="project-shot"><img src="assets/projects/booking-platform/room.jpg" alt="Room selection"></div>
+      <div class="project-shot"><img src="assets/projects/booking-platform/review.jpg" alt="Booking review"></div>
+    </div>
+
+    <p class="project-note">
+      End-to-end booking flow from intent capture to room choice and checkout review.
     </p>
   </div>
 </div>
