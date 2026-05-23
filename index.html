@@ -67,10 +67,10 @@
     }
 
     .site-hero {
-      min-height: 78vh;
+      min-height: 68vh;
       display: grid;
       align-items: center;
-      padding: 58px 0 34px;
+      padding: 44px 0 28px;
     }
 
     .hero-inner {
@@ -84,24 +84,9 @@
       max-width: 760px;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      padding: 0 13px;
-      border-radius: 999px;
-      border: 1px solid rgba(247, 200, 115, 0.26);
-      background: rgba(247, 200, 115, 0.08);
-      color: #fde68a;
-      font-family: "SFMono-Regular", Consolas, monospace;
-      font-size: 0.8rem;
-      font-weight: 760;
-      margin-bottom: 20px;
-    }
-
     h1 {
-      font-size: clamp(3.25rem, 7.8vw, 6.9rem);
-      line-height: 0.95;
+      font-size: clamp(2.6rem, 5.8vw, 5rem);
+      line-height: 1;
       letter-spacing: 0;
       background: linear-gradient(105deg, #fff8dc 0%, var(--gold) 28%, var(--blue) 58%, var(--ide-pink) 100%);
       -webkit-background-clip: text;
@@ -123,44 +108,10 @@
       font-size: 1.02rem;
     }
 
-    .agent-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 24px;
-    }
-
-    .agent-pill {
-      border: 1px solid rgba(103, 232, 249, 0.22);
-      border-radius: 999px;
-      padding: 8px 11px;
-      background: rgba(8, 13, 28, 0.78);
-      color: #ccfbf1;
-      font-family: "SFMono-Regular", Consolas, monospace;
-      font-size: 0.78rem;
-      font-weight: 700;
-    }
-
     .hero-visual {
       position: relative;
       justify-self: end;
       width: min(100%, 390px);
-    }
-
-    .hero-visual::before {
-      content: "Telegram -> Codex -> PR";
-      position: absolute;
-      top: -18px;
-      right: 18px;
-      z-index: 2;
-      border: 1px solid rgba(103, 232, 249, 0.28);
-      border-radius: 999px;
-      padding: 8px 12px;
-      background: rgba(2, 6, 23, 0.82);
-      color: #a7f3d0;
-      font-family: "SFMono-Regular", Consolas, monospace;
-      font-size: 0.78rem;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
     }
 
     .portrait-card {
@@ -520,7 +471,7 @@
     @media (max-width: 780px) {
       .container { width: min(100% - 24px, 1180px); }
       .site-hero { min-height: auto; padding-top: 48px; }
-      h1 { font-size: clamp(3rem, 14vw, 4.8rem); }
+      h1 { font-size: clamp(2.55rem, 12vw, 4.1rem); }
       .stats { grid-template-columns: 1fr; }
       .project-shot.hero { grid-row: auto; }
       .project-shot.hero img { min-height: 0; }
@@ -549,25 +500,15 @@
 <div class="site-hero">
   <div class="hero-inner">
     <div class="hero-copy">
-      <div class="eyebrow">Jaideep Mala • SDE2 at AWS</div>
-      <h1>I build backend systems and AI workflows that actually ship.</h1>
+      <h1>I build full-stack systems that scale.</h1>
       <p class="subtitle">
         8+ years across AWS, Goldman Sachs, and Samsung, building Java/Spring,
-        cloud, database, and distributed systems used at serious scale.
+        React, cloud, database, and distributed systems used at serious scale.
       </p>
       <p class="hero-proof">
-        Now extending that engineering depth into autonomous development workflows:
-        Telegram requests, Codex coding agents, GitHub branches, automated checks,
-        AI review, and PR approval loops.
+        I work across backend platforms, product frontend, cloud architecture,
+        and practical AI-powered workflows that help teams move from idea to pull request faster.
       </p>
-
-      <div class="agent-strip" aria-label="AI workflow highlights">
-        <span class="agent-pill">chat request</span>
-        <span class="agent-pill">agent builds</span>
-        <span class="agent-pill">tests run</span>
-        <span class="agent-pill">AI reviews</span>
-        <span class="agent-pill">PR raised</span>
-      </div>
 
       <div class="cta">
         <a class="btn primary" href="#projects">View Projects</a>
@@ -589,8 +530,8 @@
           <p>Users served through scalable platforms</p>
         </div>
         <div class="stat">
-          <h3>AI -> PR</h3>
-          <p>Agent workflow built end to end</p>
+          <h3>Full Stack</h3>
+          <p>Backend, frontend, cloud, and AI workflows</p>
         </div>
       </div>
     </div>
@@ -617,6 +558,79 @@
     I have also been building complete AI-powered development workflows where Telegram,
     Codex agents, GitHub branches, automated tests, AI review, and pull requests work
     together to ship real features and fixes.
+  </div>
+</div>
+
+<div class="section">
+  <h2>🧠 Skills</h2>
+
+  <div class="card skills-card">
+    <div class="skills-grid">
+      <div class="skill-group">
+        <strong>Backend Engineering</strong>
+        <div class="skill-tags">
+          <span class="tag">Java</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Spring MVC</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <strong>Cloud & Platform</strong>
+        <div class="skill-tags">
+          <span class="tag">AWS</span>
+          <span class="tag">AWS Lambda</span>
+          <span class="tag">AWS Fargate</span>
+          <span class="tag">Amazon S3</span>
+          <span class="tag">GCP</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <strong>Data Systems</strong>
+        <div class="skill-tags">
+          <span class="tag">MySQL</span>
+          <span class="tag">NoSQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Database Design</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <strong>Distributed Systems</strong>
+        <div class="skill-tags">
+          <span class="tag">Kafka</span>
+          <span class="tag">Redis</span>
+          <span class="tag">Microservices</span>
+          <span class="tag">High Scale APIs</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <strong>AI Delivery Workflows</strong>
+        <div class="skill-tags">
+          <span class="tag">Codex</span>
+          <span class="tag">Agent Orchestration</span>
+          <span class="tag">Telegram Automation</span>
+          <span class="tag">GitHub PR Automation</span>
+          <span class="tag">AI Code Review</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <strong>Product Frontend</strong>
+        <div class="skill-tags">
+          <span class="tag">React</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Android</span>
+          <span class="tag">Vercel</span>
+          <span class="tag">Render</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -741,79 +755,6 @@
     <p class="project-note">
       End-to-end booking flow from intent capture to room choice and checkout review.
     </p>
-  </div>
-</div>
-
-<div class="section">
-  <h2>🧠 Skills</h2>
-
-  <div class="card skills-card">
-    <div class="skills-grid">
-      <div class="skill-group">
-        <strong>Backend Engineering</strong>
-        <div class="skill-tags">
-          <span class="tag">Java</span>
-          <span class="tag">Spring Boot</span>
-          <span class="tag">Spring MVC</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">Python</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <strong>Cloud & Platform</strong>
-        <div class="skill-tags">
-          <span class="tag">AWS</span>
-          <span class="tag">AWS Lambda</span>
-          <span class="tag">AWS Fargate</span>
-          <span class="tag">Amazon S3</span>
-          <span class="tag">GCP</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <strong>Data Systems</strong>
-        <div class="skill-tags">
-          <span class="tag">MySQL</span>
-          <span class="tag">NoSQL</span>
-          <span class="tag">MongoDB</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Database Design</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <strong>Distributed Systems</strong>
-        <div class="skill-tags">
-          <span class="tag">Kafka</span>
-          <span class="tag">Redis</span>
-          <span class="tag">Microservices</span>
-          <span class="tag">High Scale APIs</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <strong>AI Delivery Workflows</strong>
-        <div class="skill-tags">
-          <span class="tag">Codex</span>
-          <span class="tag">Agent Orchestration</span>
-          <span class="tag">Telegram Automation</span>
-          <span class="tag">GitHub PR Automation</span>
-          <span class="tag">AI Code Review</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <strong>Product Frontend</strong>
-        <div class="skill-tags">
-          <span class="tag">React</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Android</span>
-          <span class="tag">Vercel</span>
-          <span class="tag">Render</span>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
