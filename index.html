@@ -66,16 +66,41 @@
       position: relative;
     }
 
-    .hero {
-      min-height: 74vh;
+    .site-hero {
+      min-height: 78vh;
       display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 56px 0 32px;
+      align-items: center;
+      padding: 58px 0 34px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.75fr);
+      gap: 44px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(247, 200, 115, 0.26);
+      background: rgba(247, 200, 115, 0.08);
+      color: #fde68a;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.8rem;
+      font-weight: 760;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 6.8rem);
+      font-size: clamp(3.25rem, 7.8vw, 6.9rem);
       line-height: 0.95;
       letter-spacing: 0;
       background: linear-gradient(105deg, #fff8dc 0%, var(--gold) 28%, var(--blue) 58%, var(--ide-pink) 100%);
@@ -85,10 +110,102 @@
     }
 
     .subtitle {
-      max-width: 760px;
-      margin: 20px auto 0;
+      max-width: 710px;
+      margin-top: 22px;
       font-size: clamp(1rem, 2vw, 1.28rem);
       color: var(--muted);
+    }
+
+    .hero-proof {
+      max-width: 690px;
+      margin-top: 18px;
+      color: #dbeafe;
+      font-size: 1.02rem;
+    }
+
+    .agent-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .agent-pill {
+      border: 1px solid rgba(103, 232, 249, 0.22);
+      border-radius: 999px;
+      padding: 8px 11px;
+      background: rgba(8, 13, 28, 0.78);
+      color: #ccfbf1;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .hero-visual {
+      position: relative;
+      justify-self: end;
+      width: min(100%, 390px);
+    }
+
+    .hero-visual::before {
+      content: "Telegram -> Codex -> PR";
+      position: absolute;
+      top: -18px;
+      right: 18px;
+      z-index: 2;
+      border: 1px solid rgba(103, 232, 249, 0.28);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(2, 6, 23, 0.82);
+      color: #a7f3d0;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.78rem;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+
+    .portrait-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid rgba(247, 200, 115, 0.2);
+      background:
+        linear-gradient(145deg, rgba(247, 200, 115, 0.16), rgba(103, 232, 249, 0.1)),
+        rgba(15, 23, 42, 0.72);
+      box-shadow: 0 34px 100px rgba(0,0,0,0.42);
+    }
+
+    .portrait-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      filter: saturate(0.98) contrast(1.04);
+    }
+
+    .portrait-caption {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      padding: 13px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(2, 6, 23, 0.72);
+      backdrop-filter: blur(16px);
+    }
+
+    .portrait-caption strong {
+      display: block;
+      color: #fff7ed;
+      font-size: 0.98rem;
+    }
+
+    .portrait-caption span {
+      display: block;
+      color: #bfdbfe;
+      font-size: 0.84rem;
+      margin-top: 2px;
     }
 
     .cta { margin-top: 30px; }
@@ -325,8 +442,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
-      margin-top: 42px;
-      text-align: center;
+      margin-top: 32px;
     }
 
     .stat {
@@ -338,8 +454,13 @@
     }
 
     .stat h3 {
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 3vw, 2rem);
       color: var(--gold);
+    }
+
+    .stat p {
+      color: #cbd5e1;
+      font-size: 0.9rem;
     }
 
     .links { margin-top: 18px; }
@@ -352,6 +473,15 @@
     }
 
     @media (max-width: 960px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        justify-self: start;
+        width: min(100%, 360px);
+      }
+
       .project-gallery,
       .architecture-grid {
         grid-template-columns: 1fr;
@@ -365,11 +495,12 @@
 
     @media (max-width: 780px) {
       .container { width: min(100% - 24px, 1180px); }
-      .hero { min-height: auto; padding-top: 48px; }
+      .site-hero { min-height: auto; padding-top: 48px; }
+      h1 { font-size: clamp(3rem, 14vw, 4.8rem); }
+      .stats { grid-template-columns: 1fr; }
       .project-shot.hero { grid-row: auto; }
       .project-shot.hero img { min-height: 0; }
       .booking-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .stats { grid-template-columns: 1fr; }
       .workflow-line { grid-template-columns: 1fr; }
       .project-copy,
       .project-gallery,
@@ -391,34 +522,63 @@
   <div class="container">
 
 
-<div class="hero">
-  <h1>Jaideep Mala</h1>
-  <p class="subtitle">
-    Senior Backend Engineer • 8+ YOE • Ex-Amazon, Goldman Sachs, Samsung
-  </p>
+<div class="site-hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">Jaideep Mala • SDE2 at AWS</div>
+      <h1>I build backend systems and AI workflows that actually ship.</h1>
+      <p class="subtitle">
+        8+ years across AWS, Goldman Sachs, and Samsung, building Java/Spring,
+        cloud, database, and distributed systems used at serious scale.
+      </p>
+      <p class="hero-proof">
+        Now extending that engineering depth into autonomous development workflows:
+        Telegram requests, Codex coding agents, GitHub branches, automated checks,
+        AI review, and PR approval loops.
+      </p>
 
-  <div class="cta">
-    <a class="btn primary" href="#projects">View Projects</a>
-    <a class="btn secondary" href="https://github.com/jaideepmala/" target="_blank">GitHub</a>
-  </div>
+      <div class="agent-strip" aria-label="AI workflow highlights">
+        <span class="agent-pill">chat request</span>
+        <span class="agent-pill">agent builds</span>
+        <span class="agent-pill">tests run</span>
+        <span class="agent-pill">AI reviews</span>
+        <span class="agent-pill">PR raised</span>
+      </div>
 
-  <div class="links">
-    <a href="https://github.com/jaideepmala/" target="_blank">GitHub</a> •
-    <a href="https://www.linkedin.com/in/jaideep-mala-82551a125/" target="_blank">LinkedIn</a>
-  </div>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn secondary" href="https://github.com/jaideepmala/" target="_blank">GitHub</a>
+      </div>
 
-  <div class="stats">
-    <div class="stat">
-      <h3>8+</h3>
-      <p>Years Experience</p>
+      <div class="links">
+        <a href="https://github.com/jaideepmala/" target="_blank">GitHub</a> •
+        <a href="https://www.linkedin.com/in/jaideep-mala-82551a125/" target="_blank">LinkedIn</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <h3>8+</h3>
+          <p>Years building production software</p>
+        </div>
+        <div class="stat">
+          <h3>Millions</h3>
+          <p>Users served through scalable platforms</p>
+        </div>
+        <div class="stat">
+          <h3>AI -> PR</h3>
+          <p>Agent workflow built end to end</p>
+        </div>
+      </div>
     </div>
-    <div class="stat">
-      <h3>Millions</h3>
-      <p>Users Served</p>
-    </div>
-    <div class="stat">
-      <h3>AWS</h3>
-      <p>Cloud Expertise</p>
+
+    <div class="hero-visual">
+      <div class="portrait-card">
+        <img src="assets/profile/jaideep-mala.jpeg" alt="Jaideep Mala">
+        <div class="portrait-caption">
+          <strong>Senior Backend Engineer</strong>
+          <span>AWS • AI workflow builder • IIT (ISM) Dhanbad</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
