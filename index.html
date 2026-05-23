@@ -418,23 +418,46 @@
     .tags { margin-top: 14px; }
 
     .skills-card {
-      display: grid;
-      gap: 18px;
+      padding: 26px;
     }
 
-    .skills-copy {
-      max-width: 860px;
-      color: #cbd5e1;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .skill-group {
+      min-height: 158px;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      background:
+        linear-gradient(145deg, rgba(103, 232, 249, 0.08), transparent 42%),
+        rgba(2, 6, 23, 0.42);
+    }
+
+    .skill-group strong {
+      display: block;
+      margin-bottom: 12px;
+      color: #fff7ed;
+      font-size: 0.98rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .tag {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.1);
       padding: 7px 12px;
       border-radius: 999px;
       font-size: 0.8rem;
-      margin: 4px;
       color: #e2e8f0;
     }
 
@@ -483,7 +506,8 @@
       }
 
       .project-gallery,
-      .architecture-grid {
+      .architecture-grid,
+      .skills-grid {
         grid-template-columns: 1fr;
       }
 
@@ -724,43 +748,71 @@
   <h2>🧠 Skills</h2>
 
   <div class="card skills-card">
-    <p class="skills-copy">
-      I build complete AI-powered development workflows that connect product requests,
-      coding agents, repositories, automated checks, AI review, and pull request approval
-      into one working delivery system.
-    </p>
-    <div class="tags">
-      <span class="tag">Java</span>
-      <span class="tag">Spring Boot</span>
-      <span class="tag">Spring MVC</span>
-      <span class="tag">Node.js</span>
-      <span class="tag">React</span>
-      <span class="tag">Python</span>
-      <span class="tag">JavaScript</span>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <strong>Backend Engineering</strong>
+        <div class="skill-tags">
+          <span class="tag">Java</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Spring MVC</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
 
-      <span class="tag">AWS</span>
-      <span class="tag">AWS Lambda</span>
-      <span class="tag">AWS Fargate</span>
-      <span class="tag">Amazon S3</span>
+      <div class="skill-group">
+        <strong>Cloud & Platform</strong>
+        <div class="skill-tags">
+          <span class="tag">AWS</span>
+          <span class="tag">AWS Lambda</span>
+          <span class="tag">AWS Fargate</span>
+          <span class="tag">Amazon S3</span>
+          <span class="tag">GCP</span>
+        </div>
+      </div>
 
-      <span class="tag">SQL</span>
-      <span class="tag">NoSQL</span>
-      <span class="tag">MongoDB</span>
-      <span class="tag">PostgreSQL</span>
-      <span class="tag">Database Design</span>
+      <div class="skill-group">
+        <strong>Data Systems</strong>
+        <div class="skill-tags">
+          <span class="tag">MySQL</span>
+          <span class="tag">NoSQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Database Design</span>
+        </div>
+      </div>
 
-      <span class="tag">Kafka</span>
-      <span class="tag">Redis</span>
+      <div class="skill-group">
+        <strong>Distributed Systems</strong>
+        <div class="skill-tags">
+          <span class="tag">Kafka</span>
+          <span class="tag">Redis</span>
+          <span class="tag">Microservices</span>
+          <span class="tag">High Scale APIs</span>
+        </div>
+      </div>
 
-      <span class="tag">Machine Learning</span>
-      <span class="tag">AI-Powered Workflows</span>
-      <span class="tag">Codex</span>
-      <span class="tag">Agent Orchestration</span>
-      <span class="tag">Telegram Automation</span>
-      <span class="tag">GitHub PR Automation</span>
-      <span class="tag">Automated Code Review</span>
-      <span class="tag">CI/CD Workflows</span>
-      <span class="tag">Git</span>
+      <div class="skill-group">
+        <strong>AI Delivery Workflows</strong>
+        <div class="skill-tags">
+          <span class="tag">Codex</span>
+          <span class="tag">Agent Orchestration</span>
+          <span class="tag">Telegram Automation</span>
+          <span class="tag">GitHub PR Automation</span>
+          <span class="tag">AI Code Review</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <strong>Product Frontend</strong>
+        <div class="skill-tags">
+          <span class="tag">React</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Android</span>
+          <span class="tag">Vercel</span>
+          <span class="tag">Render</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
