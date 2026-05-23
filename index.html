@@ -166,31 +166,7 @@
       border-color: rgba(247, 200, 115, 0.25);
     }
 
-    .project-main {
-      position: relative;
-    }
-
-    .project-main::before {
-      content: "Featured build";
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      z-index: 2;
-      border: 1px solid rgba(247, 200, 115, 0.36);
-      border-radius: 999px;
-      padding: 7px 12px;
-      color: var(--gold);
-      background: rgba(5, 6, 10, 0.72);
-      backdrop-filter: blur(12px);
-      font-size: 0.78rem;
-      font-weight: 800;
-    }
-
     .project-copy { padding: 30px; }
-
-    .project-main .project-copy {
-      padding-right: 190px;
-    }
 
     .project-copy h3 {
       font-size: clamp(1.6rem, 3vw, 2.4rem);
@@ -385,15 +361,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .project-main::before {
-        position: static;
-        display: inline-flex;
-        margin: 22px 0 0 24px;
-      }
-
-      .project-main .project-copy {
-        padding-right: 30px;
-      }
     }
 
     @media (max-width: 780px) {
@@ -459,9 +426,13 @@
 <div class="section">
   <h2>🚀 What I Do</h2>
   <div class="card">
-    I design and scale backend systems that handle high traffic, reduce latency,
-    and optimize cloud costs. Specialized in distributed systems, microservices,
-    and AWS architecture.
+    Senior Software Developer at AWS with 8 years of experience building reliable,
+    high-scale systems across Java, Spring, AWS, GCP, MySQL, NoSQL, Android, and modern
+    JavaScript stacks. I design backend platforms, distributed services, cloud architectures,
+    and product workflows that improve latency, reliability, and operating cost. Recently,
+    I have also been building complete AI-powered development workflows where Telegram,
+    Codex agents, GitHub branches, automated tests, AI review, and pull requests work
+    together to ship real features and fixes.
   </div>
 </div>
 
