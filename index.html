@@ -74,22 +74,6 @@
       padding: 56px 0 32px;
     }
 
-    .hero::before {
-      content: "portfolio://jaideep-mala/main";
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 34px;
-      margin-bottom: 20px;
-      padding: 0 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(103, 232, 249, 0.18);
-      background: rgba(15, 23, 42, 0.72);
-      color: #93c5fd;
-      font-family: "SFMono-Regular", Consolas, monospace;
-      font-size: 0.82rem;
-    }
-
     h1 {
       font-size: clamp(3rem, 8vw, 6.8rem);
       line-height: 0.95;
@@ -203,6 +187,10 @@
     }
 
     .project-copy { padding: 30px; }
+
+    .project-main .project-copy {
+      padding-right: 190px;
+    }
 
     .project-copy h3 {
       font-size: clamp(1.6rem, 3vw, 2.4rem);
@@ -402,6 +390,10 @@
         display: inline-flex;
         margin: 22px 0 0 24px;
       }
+
+      .project-main .project-copy {
+        padding-right: 30px;
+      }
     }
 
     @media (max-width: 780px) {
@@ -491,6 +483,8 @@
         <span class="tag">Node.js</span>
         <span class="tag">MongoDB</span>
         <span class="tag">Socket.IO</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">Render</span>
         <span class="tag">Multi-tenant SaaS</span>
       </div>
       <div class="project-links">
