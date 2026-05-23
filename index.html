@@ -5,21 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaideep Mala</title>
+  <script>document.documentElement.classList.add("js");</script>
 
   <style>
     :root {
-      --bg: #05060a;
-      --panel: rgba(15, 23, 42, 0.68);
-      --panel-strong: rgba(15, 23, 42, 0.88);
-      --line: rgba(226, 232, 240, 0.14);
-      --muted: #a7b3c7;
-      --text: #edf3ff;
-      --gold: #f7c873;
-      --blue: #67e8f9;
-      --violet: #a78bfa;
+      --bg: #030303;
+      --panel: rgba(18, 12, 7, 0.72);
+      --panel-strong: rgba(24, 14, 8, 0.92);
+      --line: rgba(255, 132, 45, 0.18);
+      --muted: #b9a99d;
+      --text: #fff7ed;
+      --orange: #ff7a18;
+      --orange-soft: #fbbf24;
+      --amber: #fed7aa;
+      --coal: #080604;
       --green: #86efac;
-      --ide-purple: #7c3aed;
-      --ide-pink: #ec4899;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -29,12 +29,13 @@
     body {
       font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 16% 4%, rgba(124, 58, 237, 0.24), transparent 28%),
-        radial-gradient(circle at 84% 8%, rgba(103, 232, 249, 0.16), transparent 30%),
-        linear-gradient(135deg, #090b13 0%, #05060a 48%, #0d0714 100%);
+        radial-gradient(circle at 18% 4%, rgba(255, 122, 24, 0.28), transparent 28%),
+        radial-gradient(circle at 85% 18%, rgba(251, 191, 36, 0.14), transparent 28%),
+        linear-gradient(135deg, #050302 0%, #030303 46%, #120905 100%);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     body::before {
@@ -57,6 +58,22 @@
       border: 1px solid rgba(148, 163, 184, 0.1);
       border-radius: 24px;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
+    .cursor-glow {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 320px;
+      height: 320px;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 50%;
+      opacity: 0.34;
+      transform: translate3d(-50%, -50%, 0);
+      background: radial-gradient(circle, rgba(255,122,24,0.34), transparent 62%);
+      filter: blur(8px);
+      transition: opacity 180ms ease;
     }
 
     .container {
@@ -88,10 +105,10 @@
       font-size: clamp(2.6rem, 5.8vw, 5rem);
       line-height: 1;
       letter-spacing: 0;
-      background: linear-gradient(105deg, #fff8dc 0%, var(--gold) 28%, var(--blue) 58%, var(--ide-pink) 100%);
+      background: linear-gradient(105deg, #fff7ed 0%, var(--amber) 26%, var(--orange) 62%, #fff7ed 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 30px 80px rgba(103, 232, 249, 0.18);
+      text-shadow: 0 30px 80px rgba(255, 122, 24, 0.2);
     }
 
     .subtitle {
@@ -104,8 +121,54 @@
     .hero-proof {
       max-width: 690px;
       margin-top: 18px;
-      color: #dbeafe;
+      color: #fed7aa;
       font-size: 1.02rem;
+    }
+
+    .workflow-console {
+      max-width: 620px;
+      margin-top: 24px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 122, 24, 0.24);
+      background:
+        linear-gradient(145deg, rgba(255, 122, 24, 0.12), transparent 38%),
+        rgba(5, 5, 5, 0.72);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.36);
+      overflow: hidden;
+    }
+
+    .console-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 0 14px;
+      border-bottom: 1px solid rgba(255, 122, 24, 0.16);
+      color: #fed7aa;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.78rem;
+    }
+
+    .console-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fb7185;
+      box-shadow: 14px 0 #facc15, 28px 0 #4ade80;
+      margin-right: 32px;
+      flex: 0 0 auto;
+    }
+
+    .console-line {
+      min-height: 58px;
+      padding: 16px;
+      color: #fff7ed;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.92rem;
+    }
+
+    .console-line span {
+      color: var(--orange-soft);
     }
 
     .hero-visual {
@@ -118,11 +181,13 @@
       position: relative;
       overflow: hidden;
       border-radius: 30px;
-      border: 1px solid rgba(247, 200, 115, 0.2);
+      border: 1px solid rgba(255, 122, 24, 0.22);
       background:
-        linear-gradient(145deg, rgba(247, 200, 115, 0.16), rgba(103, 232, 249, 0.1)),
-        rgba(15, 23, 42, 0.72);
+        linear-gradient(145deg, rgba(255, 122, 24, 0.18), rgba(251, 191, 36, 0.08)),
+        rgba(14, 8, 4, 0.72);
       box-shadow: 0 34px 100px rgba(0,0,0,0.42);
+      transform-style: preserve-3d;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
     }
 
     .portrait-card img {
@@ -142,7 +207,7 @@
       padding: 13px 14px;
       border-radius: 18px;
       border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(2, 6, 23, 0.72);
+      background: rgba(3, 3, 3, 0.74);
       backdrop-filter: blur(16px);
     }
 
@@ -154,7 +219,7 @@
 
     .portrait-caption span {
       display: block;
-      color: #bfdbfe;
+      color: #fed7aa;
       font-size: 0.84rem;
       margin-top: 2px;
     }
@@ -175,15 +240,30 @@
     }
 
     .primary {
-      background: linear-gradient(135deg, var(--gold), #f97316);
+      background: linear-gradient(135deg, var(--orange-soft), var(--orange));
       color: #120b05;
-      box-shadow: 0 18px 48px rgba(247, 200, 115, 0.24);
+      box-shadow: 0 18px 48px rgba(255, 122, 24, 0.28);
     }
 
     .secondary {
       color: var(--text);
       background: rgba(255,255,255,0.05);
       backdrop-filter: blur(14px);
+    }
+
+    .btn,
+    .project-links a,
+    .links a,
+    .card a {
+      transition: transform 180ms ease, color 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .btn:hover,
+    .project-links a:hover,
+    .links a:hover,
+    .card a:hover {
+      transform: translateY(-2px);
+      color: #fff7ed;
     }
 
     .section { margin-top: 86px; }
@@ -201,11 +281,11 @@
       height: 2px;
       margin-right: 12px;
       vertical-align: middle;
-      background: linear-gradient(90deg, var(--gold), var(--blue));
+      background: linear-gradient(90deg, var(--orange), var(--orange-soft));
     }
 
     .card {
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.52));
+      background: linear-gradient(145deg, rgba(20, 12, 7, 0.86), rgba(7, 7, 7, 0.62));
       backdrop-filter: blur(18px);
       border: 1px solid var(--line);
       padding: 22px;
@@ -213,6 +293,16 @@
       margin-top: 16px;
       box-shadow: 0 30px 90px rgba(0,0,0,0.25);
       position: relative;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, opacity 280ms ease;
+      will-change: transform;
+    }
+
+    .interactive-card:hover,
+    .project-shot:hover,
+    .flow-node:hover,
+    .skill-group:hover {
+      border-color: rgba(255, 122, 24, 0.42);
+      box-shadow: 0 34px 90px rgba(255, 122, 24, 0.11), 0 30px 90px rgba(0,0,0,0.28);
     }
 
     .card::before {
@@ -231,7 +321,7 @@
     .project-featured {
       padding: 0;
       overflow: hidden;
-      border-color: rgba(247, 200, 115, 0.25);
+      border-color: rgba(255, 122, 24, 0.26);
     }
 
     .project-copy { padding: 30px; }
@@ -251,7 +341,7 @@
     .project-links a,
     .links a,
     .card a {
-      color: var(--blue);
+      color: var(--orange-soft);
       text-decoration: none;
       margin-right: 16px;
       font-weight: 700;
@@ -268,8 +358,13 @@
       overflow: hidden;
       border-radius: 18px;
       border: 1px solid rgba(148, 163, 184, 0.18);
-      background: rgba(15, 23, 42, 0.72);
+      background: rgba(14, 8, 4, 0.72);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .project-shot:hover {
+      transform: translateY(-4px);
     }
 
     .project-shot.hero { grid-row: span 2; }
@@ -293,10 +388,10 @@
       margin: 0 30px 30px;
       padding: 24px;
       border-radius: 20px;
-      border: 1px solid rgba(103, 232, 249, 0.22);
+      border: 1px solid rgba(255, 122, 24, 0.26);
       background:
-        linear-gradient(135deg, rgba(103, 232, 249, 0.1), transparent 35%),
-        rgba(2, 6, 23, 0.64);
+        linear-gradient(135deg, rgba(255, 122, 24, 0.12), transparent 35%),
+        rgba(5, 5, 5, 0.68);
     }
 
     .ai-workflow h4 {
@@ -319,8 +414,8 @@
       border-radius: 14px;
       padding: 10px;
       color: #ecfeff;
-      border: 1px solid rgba(103, 232, 249, 0.2);
-      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid rgba(255, 122, 24, 0.22);
+      background: rgba(14, 8, 4, 0.82);
       font-size: 0.82rem;
       font-weight: 760;
       font-family: "SFMono-Regular", Consolas, monospace;
@@ -337,13 +432,13 @@
       min-height: 150px;
       padding: 16px;
       border-radius: 16px;
-      border: 1px solid rgba(247, 200, 115, 0.16);
-      background: rgba(15, 23, 42, 0.74);
+      border: 1px solid rgba(255, 122, 24, 0.18);
+      background: rgba(14, 8, 4, 0.74);
     }
 
     .architecture-card strong {
       display: block;
-      color: var(--gold);
+      color: var(--orange-soft);
       margin-bottom: 8px;
     }
 
@@ -372,6 +467,32 @@
       padding: 26px;
     }
 
+    .skill-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .skill-filter {
+      border: 1px solid rgba(255, 122, 24, 0.2);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: #fed7aa;
+      padding: 9px 13px;
+      cursor: pointer;
+      font-weight: 750;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .skill-filter:hover,
+    .skill-filter.active {
+      transform: translateY(-2px);
+      border-color: rgba(255, 122, 24, 0.55);
+      background: rgba(255, 122, 24, 0.16);
+      color: #fff7ed;
+    }
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -382,10 +503,11 @@
       min-height: 158px;
       padding: 18px;
       border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.16);
+      border: 1px solid rgba(255, 122, 24, 0.16);
       background:
-        linear-gradient(145deg, rgba(103, 232, 249, 0.08), transparent 42%),
-        rgba(2, 6, 23, 0.42);
+        linear-gradient(145deg, rgba(255, 122, 24, 0.1), transparent 42%),
+        rgba(5, 5, 5, 0.48);
+      transition: transform 180ms ease, opacity 220ms ease, border-color 180ms ease, box-shadow 180ms ease;
     }
 
     .skill-group strong {
@@ -401,15 +523,19 @@
       gap: 8px;
     }
 
+    .skill-group.is-hidden {
+      display: none;
+    }
+
     .tag {
       display: inline-flex;
       align-items: center;
       background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 122, 24, 0.16);
       padding: 7px 12px;
       border-radius: 999px;
       font-size: 0.8rem;
-      color: #e2e8f0;
+      color: #fed7aa;
     }
 
     .stats {
@@ -425,11 +551,18 @@
       border-radius: 18px;
       background: rgba(255,255,255,0.045);
       backdrop-filter: blur(14px);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .stat:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 122, 24, 0.36);
+      background: rgba(255, 122, 24, 0.08);
     }
 
     .stat h3 {
       font-size: clamp(1.5rem, 3vw, 2rem);
-      color: var(--gold);
+      color: var(--orange-soft);
     }
 
     .stat p {
@@ -438,6 +571,16 @@
     }
 
     .links { margin-top: 18px; }
+
+    html.js .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    html.js .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     footer {
       margin-top: 100px;
@@ -494,6 +637,7 @@
 </head>
 
 <body>
+  <div class="cursor-glow" aria-hidden="true"></div>
   <div class="container">
 
 
@@ -509,6 +653,16 @@
         I work across backend platforms, product frontend, cloud architecture,
         and AI automated workflows that turn repeatable engineering work into reliable systems.
       </p>
+
+      <div class="workflow-console" aria-label="Live workflow preview">
+        <div class="console-top">
+          <span class="console-dot"></span>
+          <span>workflow.preview</span>
+        </div>
+        <div class="console-line">
+          <span id="consolePrefix">$</span> <span id="workflowText">designing scalable systems...</span>
+        </div>
+      </div>
 
       <div class="cta">
         <a class="btn primary" href="#projects">View Projects</a>
@@ -550,7 +704,7 @@
 
 <div class="section">
   <h2>🚀 What I Do</h2>
-  <div class="card">
+  <div class="card interactive-card reveal" data-tilt>
     Senior Software Developer at AWS with 8 years of experience building reliable,
     high-scale systems across Java, Spring, AWS, GCP, MySQL, NoSQL, Android, and modern
     JavaScript stacks. I design backend platforms, distributed services, cloud architectures,
@@ -563,9 +717,16 @@
 <div class="section">
   <h2>🧠 Skills</h2>
 
-  <div class="card skills-card">
+  <div class="card skills-card interactive-card reveal" data-tilt>
+    <div class="skill-controls" aria-label="Filter skills">
+      <button class="skill-filter active" type="button" data-filter="all">All</button>
+      <button class="skill-filter" type="button" data-filter="backend">Backend</button>
+      <button class="skill-filter" type="button" data-filter="cloud">Cloud</button>
+      <button class="skill-filter" type="button" data-filter="ai">AI Workflows</button>
+      <button class="skill-filter" type="button" data-filter="frontend">Frontend</button>
+    </div>
     <div class="skills-grid">
-      <div class="skill-group">
+      <div class="skill-group" data-skill="backend">
         <strong>Backend Engineering</strong>
         <div class="skill-tags">
           <span class="tag">Java</span>
@@ -576,7 +737,7 @@
         </div>
       </div>
 
-      <div class="skill-group">
+      <div class="skill-group" data-skill="cloud">
         <strong>Cloud & Platform</strong>
         <div class="skill-tags">
           <span class="tag">AWS</span>
@@ -587,7 +748,7 @@
         </div>
       </div>
 
-      <div class="skill-group">
+      <div class="skill-group" data-skill="backend">
         <strong>Data Systems</strong>
         <div class="skill-tags">
           <span class="tag">MySQL</span>
@@ -598,7 +759,7 @@
         </div>
       </div>
 
-      <div class="skill-group">
+      <div class="skill-group" data-skill="backend">
         <strong>Distributed Systems</strong>
         <div class="skill-tags">
           <span class="tag">Kafka</span>
@@ -608,7 +769,7 @@
         </div>
       </div>
 
-      <div class="skill-group">
+      <div class="skill-group" data-skill="ai">
         <strong>AI Automated Workflows</strong>
         <div class="skill-tags">
           <span class="tag">Agent Workflows</span>
@@ -619,7 +780,7 @@
         </div>
       </div>
 
-      <div class="skill-group">
+      <div class="skill-group" data-skill="frontend">
         <strong>Product Frontend</strong>
         <div class="skill-tags">
           <span class="tag">React</span>
@@ -636,7 +797,7 @@
 <div class="section" id="projects">
   <h2>⚡ Projects</h2>
 
-  <div class="card project-featured project-main">
+  <div class="card project-featured project-main interactive-card reveal" data-tilt>
     <div class="project-copy">
       <h3>Restaurant POS SaaS</h3>
       <p>
@@ -670,7 +831,7 @@
       <div class="project-shot"><img src="assets/projects/restaurant-pos/settings.jpg" alt="Restaurant settings"></div>
     </div>
 
-    <div class="ai-workflow">
+    <div class="ai-workflow reveal">
       <h4>AI-Powered Autonomous Development Workflow</h4>
       <p>
         I built a complete agent workflow around this POS product to raise features, fixes, and
@@ -725,7 +886,7 @@
     </p>
   </div>
 
-  <div class="card project-featured booking-project">
+  <div class="card project-featured booking-project interactive-card reveal" data-tilt>
     <div class="project-copy">
       <h3>Hotel Booking Platform</h3>
       <p>
@@ -759,7 +920,7 @@
 
 <div class="section">
   <h2>📬 Contact</h2>
-  <div class="card">
+  <div class="card interactive-card reveal" data-tilt>
     <p>Email: jaideep.mala.personel@gmail.com</p>
     <p>
       GitHub: <a href="https://github.com/jaideepmala/" target="_blank">github.com/jaideepmala</a><br>
@@ -774,5 +935,65 @@
 
 
   </div>
+  <script>
+    const glow = document.querySelector(".cursor-glow");
+    window.addEventListener("pointermove", (event) => {
+      if (!glow) return;
+      glow.style.transform = `translate3d(${event.clientX - 160}px, ${event.clientY - 160}px, 0)`;
+    });
+
+    const workflowText = document.getElementById("workflowText");
+    const workflowLines = [
+      "designing scalable systems...",
+      "connecting product, cloud, and code...",
+      "building AI automated workflows...",
+      "turning repeatable work into reliable systems..."
+    ];
+    let workflowIndex = 0;
+    setInterval(() => {
+      if (!workflowText) return;
+      workflowIndex = (workflowIndex + 1) % workflowLines.length;
+      workflowText.textContent = workflowLines[workflowIndex];
+    }, 1800);
+
+    document.querySelectorAll("[data-tilt]").forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
+        const y = ((event.clientY - rect.top) / rect.height - 0.5) * -8;
+        card.style.transform = `perspective(900px) rotateX(${y}deg) rotateY(${x}deg) translateY(-3px)`;
+      });
+
+      card.addEventListener("pointerleave", () => {
+        card.style.transform = "";
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((item) => revealObserver.observe(item));
+
+    const skillButtons = document.querySelectorAll(".skill-filter");
+    const skillGroups = document.querySelectorAll(".skill-group");
+    skillButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        skillButtons.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+
+        skillGroups.forEach((group) => {
+          const isMatch = filter === "all" || group.dataset.skill === filter;
+          group.classList.toggle("is-hidden", !isMatch);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
