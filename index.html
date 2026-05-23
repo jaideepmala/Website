@@ -18,6 +18,8 @@
       --blue: #67e8f9;
       --violet: #a78bfa;
       --green: #86efac;
+      --ide-purple: #7c3aed;
+      --ide-pink: #ec4899;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,9 +29,9 @@
     body {
       font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 12% 0%, rgba(247, 200, 115, 0.18), transparent 30%),
-        radial-gradient(circle at 86% 8%, rgba(103, 232, 249, 0.16), transparent 28%),
-        linear-gradient(180deg, #090b13 0%, var(--bg) 42%, #070812 100%);
+        radial-gradient(circle at 16% 4%, rgba(124, 58, 237, 0.24), transparent 28%),
+        radial-gradient(circle at 84% 8%, rgba(103, 232, 249, 0.16), transparent 30%),
+        linear-gradient(135deg, #090b13 0%, #05060a 48%, #0d0714 100%);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
@@ -47,6 +49,16 @@
       mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent 72%);
     }
 
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 18px;
+      pointer-events: none;
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      border-radius: 24px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
     .container {
       width: min(1180px, calc(100vw - 36px));
       margin: auto;
@@ -62,11 +74,27 @@
       padding: 56px 0 32px;
     }
 
+    .hero::before {
+      content: "portfolio://jaideep-mala/main";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      margin-bottom: 20px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(103, 232, 249, 0.18);
+      background: rgba(15, 23, 42, 0.72);
+      color: #93c5fd;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.82rem;
+    }
+
     h1 {
       font-size: clamp(3rem, 8vw, 6.8rem);
       line-height: 0.95;
       letter-spacing: 0;
-      background: linear-gradient(105deg, #fff8dc 0%, var(--gold) 32%, var(--blue) 72%, #fff 100%);
+      background: linear-gradient(105deg, #fff8dc 0%, var(--gold) 28%, var(--blue) 58%, var(--ide-pink) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 30px 80px rgba(103, 232, 249, 0.18);
@@ -132,6 +160,20 @@
       border-radius: 22px;
       margin-top: 16px;
       box-shadow: 0 30px 90px rgba(0,0,0,0.25);
+      position: relative;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fb7185;
+      box-shadow: 14px 0 #facc15, 28px 0 #4ade80;
+      opacity: 0.74;
     }
 
     .project-featured {
@@ -249,6 +291,7 @@
       background: rgba(15, 23, 42, 0.82);
       font-size: 0.82rem;
       font-weight: 760;
+      font-family: "SFMono-Regular", Consolas, monospace;
     }
 
     .architecture-grid {
@@ -292,6 +335,16 @@
     }
 
     .tags { margin-top: 14px; }
+
+    .skills-card {
+      display: grid;
+      gap: 18px;
+    }
+
+    .skills-copy {
+      max-width: 860px;
+      color: #cbd5e1;
+    }
 
     .tag {
       display: inline-block;
@@ -545,7 +598,12 @@
 <div class="section">
   <h2>🧠 Skills</h2>
 
-  <div class="card">
+  <div class="card skills-card">
+    <p class="skills-copy">
+      I build complete AI-powered development workflows that connect product requests,
+      coding agents, repositories, automated checks, AI review, and pull request approval
+      into one working delivery system.
+    </p>
     <div class="tags">
       <span class="tag">Java</span>
       <span class="tag">Spring Boot</span>
@@ -570,16 +628,15 @@
       <span class="tag">Redis</span>
 
       <span class="tag">Machine Learning</span>
+      <span class="tag">AI-Powered Workflows</span>
+      <span class="tag">Codex</span>
+      <span class="tag">Agent Orchestration</span>
+      <span class="tag">Telegram Automation</span>
+      <span class="tag">GitHub PR Automation</span>
+      <span class="tag">Automated Code Review</span>
+      <span class="tag">CI/CD Workflows</span>
       <span class="tag">Git</span>
     </div>
-  </div>
-</div>
-
-<div class="section">
-  <h2>💼 Working Style</h2>
-  <div class="card">
-    <p>• Clear Communicator</p>
-    <p>• Accountable for Outcomes</p>
   </div>
 </div>
 
