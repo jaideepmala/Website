@@ -449,6 +449,15 @@
 
     .booking-project { margin-top: 28px; }
 
+    .scheduler-gallery {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .scheduler-gallery .project-shot img {
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
     .booking-gallery {
       grid-template-columns: repeat(5, minmax(0, 1fr));
       align-items: start;
@@ -884,6 +893,91 @@
       Built as a real product path: frontend → API → database, then extended with staff roles,
       realtime updates, restaurant-specific settings, and a working autonomous AI PR workflow with
       planning, Codex code generation, automated checks, review, branch push, and Telegram notifications.
+    </p>
+  </div>
+
+  <div class="card project-featured booking-project interactive-card reveal" data-tilt>
+    <div class="project-copy">
+      <h3>Distributed Job Scheduler</h3>
+      <p>
+        A generic distributed scheduling platform built with Java and Spring Boot. The system accepts
+        one-off and cron jobs through APIs, persists durable job definitions in Postgres, dispatches
+        due executions through Kafka, coordinates worker concurrency with Redis leases, retries failed
+        jobs with backoff, moves exhausted executions to a dead letter queue, and exposes execution
+        state for an operations dashboard.
+      </p>
+      <div class="tags">
+        <span class="tag">Java</span>
+        <span class="tag">Spring Boot</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Kafka</span>
+        <span class="tag">Redis Leases</span>
+        <span class="tag">Retries</span>
+        <span class="tag">DLQ</span>
+        <span class="tag">Render</span>
+        <span class="tag">Vercel Dashboard</span>
+      </div>
+    </div>
+
+    <div class="project-gallery scheduler-gallery">
+      <div class="project-shot hero">
+        <img src="assets/projects/distributed-job-scheduler/dashboard-overview.png" alt="Distributed job scheduler dashboard overview">
+      </div>
+    </div>
+
+    <div class="ai-workflow reveal">
+      <h4>Fault-Tolerant Scheduling Architecture</h4>
+      <p>
+        The scheduler separates job intake, dispatch, publication, and execution. The API stores job
+        definitions in Postgres. A dispatcher claims due jobs with database locks, creates execution
+        records, and writes outbox events. The outbox publisher sends execution events to Kafka. Worker
+        services consume those events, acquire Redis leases, execute registered job handlers, and update
+        Postgres with success, retry, or dead-letter status.
+      </p>
+
+      <div class="workflow-line" aria-label="Distributed job scheduler workflow">
+        <div class="flow-node">API</div>
+        <div class="flow-node">Postgres</div>
+        <div class="flow-node">Dispatcher</div>
+        <div class="flow-node">Outbox</div>
+        <div class="flow-node">Kafka</div>
+        <div class="flow-node">Workers</div>
+        <div class="flow-node">Redis lease</div>
+        <div class="flow-node">DLQ</div>
+      </div>
+
+      <div class="architecture-grid">
+        <div class="architecture-card">
+          <strong>1. Durable job registry</strong>
+          <p>Postgres stores job definitions, executions, attempts, retry state, and dashboard history.</p>
+        </div>
+        <div class="architecture-card">
+          <strong>2. Reliable dispatch</strong>
+          <p>The dispatcher scans due jobs, uses row locks to avoid duplicate scheduling, and writes outbox events.</p>
+        </div>
+        <div class="architecture-card">
+          <strong>3. Kafka execution stream</strong>
+          <p>Kafka decouples scheduling from worker execution and allows worker fleets to scale independently.</p>
+        </div>
+        <div class="architecture-card">
+          <strong>4. Redis lease control</strong>
+          <p>Workers acquire expiring leases so duplicate Kafka deliveries do not run the same execution concurrently.</p>
+        </div>
+        <div class="architecture-card">
+          <strong>5. Retry and backoff</strong>
+          <p>Failures are retried with policy-driven backoff before exhausted executions move to DLQ.</p>
+        </div>
+        <div class="architecture-card">
+          <strong>6. Operations dashboard</strong>
+          <p>The dashboard shows job definitions, live executions, attempts, failure reasons, and replayable DLQ entries.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="project-note">
+      Built as a reusable infrastructure system: Spring Boot services on Render, Vercel dashboard,
+      Postgres as source of truth, Kafka-compatible execution events, Redis lease coordination,
+      retries, dead letter queue, and effectively-once execution semantics.
     </p>
   </div>
 
